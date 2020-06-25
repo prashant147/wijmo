@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myDemo": {
+    "wijmoApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,20 +17,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/myDemo",
+            "outputPath": "dist/wijmoApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "./node_modules/wijmo/styles/wijmo.css",
-              "./node_modules/wijmo/styles/themes/wijmo.theme.office.css",
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -69,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "myDemo:build"
+            "browserTarget": "wijmoApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "myDemo:build:production"
+              "browserTarget": "wijmoApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "myDemo:build"
+            "browserTarget": "wijmoApp:build"
           }
         },
         "test": {
@@ -95,7 +92,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -118,19 +114,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "myDemo:serve"
+            "devServerTarget": "wijmoApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "myDemo:serve:production"
+              "devServerTarget": "wijmoApp:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "myDemo",
+  "defaultProject": "wijmoApp",
   "cli": {
-    "analytics": "7f367164-41e5-4d83-8c58-6416aed6a65d"
+    "analytics": "55388898-caa1-4c56-ade7-6d1f3aa597c5"
   }
 }

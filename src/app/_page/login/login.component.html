@@ -3,43 +3,45 @@
     <div style="text-align: center;font-size: 20px;font-weight: 600;padding: 20px;">Wijmo</div>
     <div style="font-size: 15px;font-weight: 100;padding: 20px;">
       <span>Loading Time:2.4s</span>
-      <span style="float: right;">Load Data:1000</span> 
+      <span style="float: right;">Load Data:10000</span> 
      </div>
   </div>
-  <div >
-    <wj-flex-chart [header]="'Country GDP'" [bindingX]="'country'" [selectionMode]="'Point'" [itemsSource]="data" 
+  <div  >
+    <wj-flex-chart [header]="'Country Bar'" [bindingX]="'name'" [selectionMode]="'Point'" [itemsSource]="dataBar" [stacking]="'Stacked'"
       [palette]="['rgba(42,159,214,1)', 'rgba(119,179,0,1)', 'rgba(153,51,204,1)', 'rgba(255,136,0,1)', 'rgba(204,0,0,1)', 'rgba(0,204,163,1)', 'rgba(61,109,204,1)', 'rgba(82,82,82,1)', 'rgba(0,0,0,1)']">
-      <wj-flex-chart-legend [position]="'Bottom'">
-      </wj-flex-chart-legend>
-    
-      <wj-flex-chart-series [name]="'barcode'" [binding]="'barcode'">
-      </wj-flex-chart-series>
-     
-      <wj-flex-chart-animation></wj-flex-chart-animation>
-    </wj-flex-chart> 
-  </div>
-  <div >
-    <wj-flex-chart [itemsSource]="data" [bindingX]="'country'" [chartType]="'Line'"
-      [header]="'Temperature of New York'"
-      [palette]="['rgba(42,159,214,1)', 'rgba(119,179,0,1)', 'rgba(153,51,204,1)', 'rgba(255,136,0,1)', 'rgba(204,0,0,1)', 'rgba(0,204,163,1)', 'rgba(61,109,204,1)', 'rgba(82,82,82,1)', 'rgba(0,0,0,1)']">
-      <wj-flex-chart-legend [position]="'Bottom'"></wj-flex-chart-legend>
-      <wj-flex-chart-axis [wjProperty]="'axisY'" [title]="'Temperature(°C)'"></wj-flex-chart-axis>
-      <wj-flex-chart-series [binding]="'barcode'" [name]="'barcode'"></wj-flex-chart-series>
-      
-      <wj-flex-chart-animation [animationMode]="'Point'"></wj-flex-chart-animation>
+      <wj-flex-chart-legend [position]="'Bottom'"> </wj-flex-chart-legend>
+
+        <wj-flex-chart-series [name]="'GDP'" [binding]="'gdp'"> </wj-flex-chart-series>
+        <wj-flex-chart-series [name]="'GDP 1'" [binding]="'gdp1'"> </wj-flex-chart-series>
+        <wj-flex-chart-series [name]="'GDP 2'" [binding]="'gdp2'"> </wj-flex-chart-series> 
+        <wj-flex-chart-animation></wj-flex-chart-animation>
     </wj-flex-chart>
   </div>
-  <div style="width: 45%;">
+  
+  <div >
+    <wj-flex-chart [header]="'Country Line'" [bindingX]="'name'" [selectionMode]="'Point'" [itemsSource]="dataLine" [chartType]="'Line'"
+    [palette]="['rgba(42,159,214,1)', 'rgba(119,179,0,1)', 'rgba(153,51,204,1)', 'rgba(255,136,0,1)', 'rgba(204,0,0,1)', 'rgba(0,204,163,1)', 'rgba(61,109,204,1)', 'rgba(82,82,82,1)', 'rgba(0,0,0,1)']">
+    <wj-flex-chart-legend [position]="'Bottom'"> </wj-flex-chart-legend>
+
+      <wj-flex-chart-series [name]="'GDP'" [binding]="'gdp'">
+      </wj-flex-chart-series>
+    
+      <wj-flex-chart-animation></wj-flex-chart-animation>
+  </wj-flex-chart>
+ 
+  </div>
+  <div >
+    <div></div>
     <span *ngIf="isRootPie" (click)="pieBack()"> Back</span>
-    <wj-flex-pie #flexPie [header]="'Best-selling Mobile Phones Brands of 2017'" [bindingName]="'brand'" [binding]="'sales'"
-      [itemsSource]="data2"
+    <wj-flex-pie #flexPie style="height: 300px" [header]="'Best-selling Mobile Phones Brands of 2017 '" [bindingName]="'name'" [binding]="'gdp'"
+      [itemsSource]="dataPei"
       [isAnimated]="true"
       selectionMode="Point" selectedItemPosition="Top"
       (selectionChanged)="getItemsSel($event)"
       [palette]="['rgba(42,159,214,1)', 'rgba(119,179,0,1)', 'rgba(153,51,204,1)', 'rgba(255,136,0,1)', 'rgba(204,0,0,1)', 'rgba(0,204,163,1)', 'rgba(61,109,204,1)', 'rgba(82,82,82,1)', 'rgba(0,0,0,1)']">
       <wj-flex-pie-data-label [content]="getLabelContent"></wj-flex-pie-data-label>
-      <wj-flex-chart-animation #pieAnimation [animationMode]="animationMode" [easing]="Swing" [duration]="400">
+     <wj-flex-chart-animation #pieAnimation [animationMode]="animationMode" [duration]="400">
       </wj-flex-chart-animation>
     </wj-flex-pie>
-  </div>
-</div>
+  </div> 
+</div> 
