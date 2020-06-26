@@ -1,1 +1,13 @@
-<p>bar-char works!</p>
+<div>
+    <wj-flex-chart [header]="headerTitle"
+         [bindingX]="bindingX"
+         [selectionMode]="'Point'" 
+         [itemsSource]="dataSource" 
+         [chartType]="chartType"
+         [stacking]="stacking"
+         (selectionChanged)="itemChanged($event)">
+        <wj-flex-chart-legend [position]="'Bottom'"> </wj-flex-chart-legend>
+        <wj-flex-chart-series *ngFor="let serv of service" [name]="serv.name" [binding]="serv.binding"> </wj-flex-chart-series>
+        <wj-flex-chart-animation></wj-flex-chart-animation>
+    </wj-flex-chart>
+</div>

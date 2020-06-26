@@ -8,14 +8,12 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { UserService} from '../../service/user.service';
-import { WjChartModule } from '@grapecity/wijmo.angular2.chart'; 
-import { WjChartAnimationModule } from '@grapecity/wijmo.angular2.chart.animation';
+import { ShareModule } from '../../share/share.module';
 
 @NgModule({
   declarations: [LoginComponent],
   imports: [
-    WjChartModule,WjChartAnimationModule,
-    CommonModule,
+    CommonModule,ShareModule,
     LoginRoutingModule
   ],providers:[UserService]
 })

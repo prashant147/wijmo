@@ -1,1 +1,12 @@
-<p>pie-chart works!</p>
+<span *ngIf="isRootPie" (click)="pieBack()"> Back</span>
+<wj-flex-pie #flexPie style="height: 300px" [header]="headerTitle" 
+  [bindingName]="bindingX"
+  [binding]="service.binding"
+  [itemsSource]="dataSource"
+  [isAnimated]="true" 
+  selectionMode="Point" 
+  (selectionChanged)="itemChanged($event)">
+  <wj-flex-chart-legend position="Bottom"></wj-flex-chart-legend>
+ <wj-flex-chart-animation #pieAnimation [animationMode]="animationMode" [duration]="400">
+  </wj-flex-chart-animation>
+</wj-flex-pie>

@@ -1,47 +1,18 @@
 <div style="margin: 30px;background: #fff" >
   <div>
     <div style="text-align: center;font-size: 20px;font-weight: 600;padding: 20px;">Wijmo</div>
-    <div style="font-size: 15px;font-weight: 100;padding: 20px;">
-      <span>Loading Time:<b style="font-size: 20px;font-weight: 500;">2.4s</b></span>
-      <span style="float: right;">Load Data:<b style="font-size: 20px;font-weight: 500;">10000</b></span> 
+    <div>
+      <span>Loading Time:<b style="font-size: 20px;font-weight: 900;">2.4s</b></span><br/>
+      <span>Load Data: <b style="font-size: 20px;font-weight: 900;">10000</b></span> 
      </div>
   </div>
   <div  >
-    <wj-flex-chart [header]="'Country Bar'" [bindingX]="'name'" [selectionMode]="'Point'" [itemsSource]="dataBar" [stacking]="'Stacked'"
-      [palette]="['rgba(42,159,214,1)', 'rgba(119,179,0,1)', 'rgba(153,51,204,1)', 'rgba(255,136,0,1)', 'rgba(204,0,0,1)', 'rgba(0,204,163,1)', 'rgba(61,109,204,1)', 'rgba(82,82,82,1)', 'rgba(0,0,0,1)']">
-      <wj-flex-chart-legend [position]="'Bottom'"> </wj-flex-chart-legend>
-
-        <wj-flex-chart-series [name]="'GDP'" [binding]="'gdp'"> </wj-flex-chart-series>
-        <wj-flex-chart-series [name]="'GDP 1'" [binding]="'gdp1'"> </wj-flex-chart-series>
-        <wj-flex-chart-series [name]="'GDP 2'" [binding]="'gdp2'"> </wj-flex-chart-series> 
-        <wj-flex-chart-animation></wj-flex-chart-animation>
-    </wj-flex-chart>
+      <app-bar-char [headerTitle]="'Country Bar'" [bindingX]="'name'" [service]="BarService" [dataSource]="dataBar" [stacking]="'Stacked'"  ></app-bar-char>
   </div>
-  
-  <div >
-    <wj-flex-chart [header]="'Country Line'" [bindingX]="'name'" [selectionMode]="'Point'" [itemsSource]="dataLine" [chartType]="'Line'"
-    [palette]="['rgba(42,159,214,1)', 'rgba(119,179,0,1)', 'rgba(153,51,204,1)', 'rgba(255,136,0,1)', 'rgba(204,0,0,1)', 'rgba(0,204,163,1)', 'rgba(61,109,204,1)', 'rgba(82,82,82,1)', 'rgba(0,0,0,1)']">
-    <wj-flex-chart-legend [position]="'Bottom'"> </wj-flex-chart-legend>
-
-      <wj-flex-chart-series [name]="'GDP'" [binding]="'gdp'">
-      </wj-flex-chart-series>
-    
-      <wj-flex-chart-animation></wj-flex-chart-animation>
-  </wj-flex-chart>
- 
+  <div > 
+      <app-bar-char [headerTitle]="'Country Line'" [bindingX]="'name'" [service]="lineService" [dataSource]="dataLine" [chartType]="'Line'" ></app-bar-char>
   </div>
   <div >
-    <div></div>
-    <span *ngIf="isRootPie" (click)="pieBack()"> Back</span>
-    <wj-flex-pie #flexPie style="height: 300px" [header]="'Best-selling Mobile Phones Brands of 2017 '" [bindingName]="'name'" [binding]="'gdp'"
-      [itemsSource]="dataPei"
-      [isAnimated]="true"
-      selectionMode="Point" selectedItemPosition="Top"
-      (selectionChanged)="getItemsSel($event)"
-      [palette]="['rgba(42,159,214,1)', 'rgba(119,179,0,1)', 'rgba(153,51,204,1)', 'rgba(255,136,0,1)', 'rgba(204,0,0,1)', 'rgba(0,204,163,1)', 'rgba(61,109,204,1)', 'rgba(82,82,82,1)', 'rgba(0,0,0,1)']">
-      <wj-flex-pie-data-label [position]="'Bottom'" ></wj-flex-pie-data-label>
-     <wj-flex-chart-animation #pieAnimation [animationMode]="animationMode" [duration]="400">
-      </wj-flex-chart-animation>
-    </wj-flex-pie>
+     <app-pie-chart [headerTitle]="'Country Pie'" [bindingX]="'name'" [service]="pieService" [dataSource]="dataPei"></app-pie-chart>
   </div> 
 </div> 
