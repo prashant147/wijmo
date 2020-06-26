@@ -1,9 +1,18 @@
 <div>
-    <wj-flex-chart [header]="headerTitle"
+    <wj-flex-chart *ngIf="chartType" [header]="headerTitle"
          [bindingX]="bindingX"
          [selectionMode]="'Point'" 
          [itemsSource]="dataSource" 
          [chartType]="chartType"
+         (selectionChanged)="itemChanged($event)">
+        <wj-flex-chart-legend [position]="'Bottom'"> </wj-flex-chart-legend>
+        <wj-flex-chart-series *ngFor="let serv of service" [name]="serv.name" [binding]="serv.binding"> </wj-flex-chart-series>
+        <wj-flex-chart-animation></wj-flex-chart-animation>
+    </wj-flex-chart>
+    <wj-flex-chart *ngIf="!chartType" [header]="headerTitle"
+         [bindingX]="bindingX"
+         [selectionMode]="'Point'" 
+         [itemsSource]="dataSource" 
          [stacking]="stacking"
          (selectionChanged)="itemChanged($event)">
         <wj-flex-chart-legend [position]="'Bottom'"> </wj-flex-chart-legend>

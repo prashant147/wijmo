@@ -108,13 +108,12 @@ border-bottom: 4px solid #000;
   <div class="row">
     <div class="col-md-6" >
       <app-bar-char [headerTitle]="'Country Bar'" [bindingX]="'name'" [service]="BarService" [dataSource]="dataBar" [stacking]="'Stacked'"  ></app-bar-char>
+    </div>
+    <div class="col-md-6"> 
+        <app-bar-char [headerTitle]="'Country Line'" [bindingX]="'name'" [service]="lineService" [dataSource]="dataBar" [chartType]="'Line'" ></app-bar-char>
+    </div>
   </div>
-  <div class="col-md-6"> 
-      <app-bar-char [headerTitle]="'Country Line'" [bindingX]="'name'" [service]="lineService" [dataSource]="dataLine" [chartType]="'Line'" ></app-bar-char>
-  </div>
-  </div>
-
   <div >
-     <app-pie-chart [headerTitle]="'Country Pie'" [bindingX]="'name'" [service]="pieService" [dataSource]="dataPei"></app-pie-chart>
+     <app-pie-chart [headerTitle]="'Country Pie'" [bindingX]="'name'" [service]="pieService" [dataSource]="dataPei" [drillDown]=true  (selectItems)="itemsEvent($event)"  ></app-pie-chart>
   </div> 
-</div> 
+</div>  

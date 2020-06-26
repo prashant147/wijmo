@@ -10275,7 +10275,7 @@ export class UserService {
         return new wijmo.CollectionView(data, {
             groupDescriptions: [ 'country','continent' ,'year']
         });
-  }
+  } 
   getGroupData(group: wijmo.CollectionView | wijmo.CollectionViewGroup) {
     let arr: any[] = [];
     group.groups.forEach(function (g) {
