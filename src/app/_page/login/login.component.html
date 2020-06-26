@@ -105,12 +105,15 @@ border-bottom: 4px solid #000;
       <span>Load Data: <b style="font-size: 20px;font-weight: 900;">10000</b></span> 
      </div>
   </div>
-  <div  >
+  <div class="row">
+    <div class="col-md-6" >
       <app-bar-char [headerTitle]="'Country Bar'" [bindingX]="'name'" [service]="BarService" [dataSource]="dataBar" [stacking]="'Stacked'"  ></app-bar-char>
   </div>
-  <div > 
+  <div class="col-md-6"> 
       <app-bar-char [headerTitle]="'Country Line'" [bindingX]="'name'" [service]="lineService" [dataSource]="dataLine" [chartType]="'Line'" ></app-bar-char>
   </div>
+  </div>
+
   <div >
      <app-pie-chart [headerTitle]="'Country Pie'" [bindingX]="'name'" [service]="pieService" [dataSource]="dataPei"></app-pie-chart>
   </div> 
