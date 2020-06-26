@@ -2,8 +2,8 @@
   <div>
     <div style="text-align: center;font-size: 20px;font-weight: 600;padding: 20px;">Wijmo</div>
     <div style="font-size: 15px;font-weight: 100;padding: 20px;">
-      <span>Loading Time:2.4s</span>
-      <span style="float: right;">Load Data:10000</span> 
+      <span>Loading Time:<b style="font-size: 20px;font-weight: 500;">2.4s</b></span>
+      <span style="float: right;">Load Data:<b style="font-size: 20px;font-weight: 500;">10000</b></span> 
      </div>
   </div>
   <div  >
@@ -39,7 +39,7 @@
       selectionMode="Point" selectedItemPosition="Top"
       (selectionChanged)="getItemsSel($event)"
       [palette]="['rgba(42,159,214,1)', 'rgba(119,179,0,1)', 'rgba(153,51,204,1)', 'rgba(255,136,0,1)', 'rgba(204,0,0,1)', 'rgba(0,204,163,1)', 'rgba(61,109,204,1)', 'rgba(82,82,82,1)', 'rgba(0,0,0,1)']">
-      <wj-flex-pie-data-label [content]="getLabelContent"></wj-flex-pie-data-label>
+      <wj-flex-pie-data-label [position]="'Bottom'" ></wj-flex-pie-data-label>
      <wj-flex-chart-animation #pieAnimation [animationMode]="animationMode" [duration]="400">
       </wj-flex-chart-animation>
     </wj-flex-pie>
